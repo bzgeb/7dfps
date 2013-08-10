@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{CB079B53-5B92-CA0D-327F-D7A7A2999E7D}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_0;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\External\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\BMFontReader.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\ComponentSelector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\NGUIJson.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\NGUIMenu.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\NGUISettings.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\SpriteSelector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UICameraTool.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIFilledSpriteInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIFontInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIFontMaker.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UILabelInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIPanelInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIPanelTool.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIScrollBarInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UISlicedSpriteInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UISliderInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UISpriteInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UITextureInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UITexturePacker.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
+     <Compile Include="Assets\External\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
+     <Compile Include="Assets\External\OuyaUnityPlugin\Ouya\SDK\Editor\OuyaMenuAdmin.cs" />
+     <Compile Include="Assets\External\OuyaUnityPlugin\Ouya\SDK\Editor\OuyaPanel.cs" />
+     <Compile Include="Assets\External\OuyaUnityPlugin\Ouya\SDK\Editor\OuyaPostProcessor.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\AccountService.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\PhotonConverter.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\PhotonEditor.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewHandler.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewInspector.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\PhotonViewPrefabApply.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\Editor\PhotonNetwork\ServerSettingsInspector.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonEditorUtility.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonGameObjectProxyEditor.cs" />
+     <Compile Include="Assets\External\Photon Unity Networking\PlayMaker\Editor\PlayMakerPhotonWizard.cs" />
+     <Compile Include="Assets\External\PlayMaker\Actions\Editor\LookAtActionEditor.cs" />
+     <Compile Include="Assets\External\PlayMaker\Actions\Editor\MoveTowardsActionEditor.cs" />
+     <Compile Include="Assets\External\PlayMaker\Actions\Editor\SetCameraFOVActionEditor.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\AboutWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\ContextToolWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmActionWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmComponentInspector.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmEditorHelpers.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmEditorWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmErrorWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmEventsWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmGlobalsWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmLogWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmSelectorWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmStateWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmTemplate.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmTemplateEditor.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\FsmTemplateWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\PlayMakerBugReportWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\PlayMakerCustomActionWizard.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\PlayMakerGUIInspector.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\PlayMakerGlobalsInspector.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\PlayMakerMainMenu.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\PlayMakerWelcomeWindow.cs" />
+     <Compile Include="Assets\External\PlayMaker\Editor\ReportWindow.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_ComponentPersister.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_EditorGUIUtility.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_EventDumpWindow.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FPCameraEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FPControllerEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FPPlayerEventHandlerEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FPWeaponEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FPWeaponShooterEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FPWeaponSwingerEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_FileDialog.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_MessageBox.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_PresetEditorGUIUtility.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_ShooterEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Core\Editor\vp_TimerEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Gameplay\Editor\vp_FootstepManagerEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Gameplay\Editor\vp_MovingPlatformEditor.cs" />
+     <Compile Include="Assets\External\UltimateFPS\Scripts\Gameplay\Editor\vp_SurfaceIdentifierEditor.cs" />
+     <Compile Include="Assets\External\iTween\PlayMaker\Editor\iTweenMoveToActionEditor.cs" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterPistolSlideFast.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraClimb.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterMachinegunZoom.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SystemOFFShooter.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerDead.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerCrouch.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponRevolverCrouch.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraSlideFast.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ArtilleryController.txt" />
+     <None Include="Assets\External\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponMachinegun.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyWeaponZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernCameraZoom.txt" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PerspOldWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaCamera.txt" />
+     <None Include="Assets\External\PlayMaker\Readme.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerFreeze.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\StompingCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernWeaponCrouch.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MouseRawUnityCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyCamera.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SystemOFFWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ControllerCrouch.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponRevolverRun.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponRevolverZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaShooter.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistolReload2.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraReload.txt" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SmackController.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraFreeze.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MaceWeaponRaise2.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\WallFacingWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\Persp1999Weapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\FreezeController.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyController.txt" />
+     <None Include="Assets\External\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponMachinegunCrouch.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraDefault.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistolZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\Persp1999Camera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernController.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterRevolverZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponRevolverReload.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MouseSmoothingCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerRun.txt" />
+     <None Include="Assets\External\Scripts\strange\examples\myfirstproject\ReadMe.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraCrouch.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\WallFacingCamera.txt" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PivotMuzzleWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\DefaultCamera.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\External\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.xml" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\DefaultWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterMachinegun.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterPistolZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\OldSchoolCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MaceWeaponRaise.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerZoom.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistol.txt" />
+     <None Include="Assets\External\UltimateFPS\Content\Art\Weapons\Source\BasicArms\BasicArmsReadMe.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\DrunkWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
+     <None Include="Assets\External\Photon Unity Networking\Plugins\PhotonNetwork\library\release_history.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistolSlideFast.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernShooter.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponRevolver.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ImmobileCamera.txt" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MaceCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ImmobileController.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MechController.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\DrunkController.txt" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterPistol.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\DrunkCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponMachinegunReload.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ArtilleryCamera.txt" />
+     <None Include="Assets\External\OuyaUnityPlugin\LitJson\license.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistolCrouch.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MechWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernCameraCrouch.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraDead.txt" />
+     <None Include="Assets\External\OuyaUnityPlugin\Plugins\Android\res\values\strings.xml" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SSAOShader.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyShooter.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MouseLowSensWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MaceWeaponSwing.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaWeaponZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SystemOFFController.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\OldSchoolWeapon.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ControllerMegaSpeed.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ImmobileWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponMachinegunRun.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\TurretWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MaceWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\AstronautCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MechWeaponZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MouseLowSensCamera.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponMachinegunZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistolReload.txt" />
+     <None Include="Assets\External\NGUI\ReadMe - 2.2.7c.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterRevolver.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MaceWeaponSwing2.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (HardClip).shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernWeapon.txt" />
+     <None Include="Assets\External\LICENSE-2.0.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PivotChestWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerClimb.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MeleeSwingUpRight.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored Overlay.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraRun.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraZoom.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SystemOFFWeaponGlideIn.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SniperWeapon.txt" />
+     <None Include="Assets\External\NGUI\Examples\Other\English.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\External\NGUI\Examples\Other\French.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SystemOFFCamera.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PerspOldCamera.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponGenericSlide.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaWeapon.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VortexEffect.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\OldSchoolShooter.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MechShooter.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\TurretCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PivotElbowWeapon.txt" />
+     <None Include="Assets\External\Photon Unity Networking\readme.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaCameraCrouch.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (HardClip).shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernWeaponZoom.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaShooterZoom.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PerspModernWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponPistolRun.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PerspModernCamera.txt" />
+     <None Include="Assets\External\OuyaUnityPlugin\Plugins\Android\res\layout\main.xml" />
+     <None Include="Assets\External\OuyaUnityPlugin\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernControllerZoom.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\External\Scripts\strange\examples\multiplecontexts\ReadMe.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\External\NGUI\Examples\Shaders\Refractive.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\ModernShooterZoom.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Camera\CameraSlide.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MechCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyShooterZoom.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\OldSchoolController.txt" />
+     <None Include="Assets\External\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Shooter\ShooterMachinegunSlideFast.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SniperCamera.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MouseRawUnityWeapon.txt" />
+     <None Include="Assets\External\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\External\Scripts\strange\extensions\ReadMe.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MafiaWeaponCrouch.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\AstronautController.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\TurretShooter.txt" />
+     <None Include="Assets\External\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\External\PlayMaker\Versions\readme.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SniperShooter.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\CowboyWeaponCrouch.txt" />
+     <None Include="Assets\External\Photon Unity Networking\changelog.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\FreezeCamera.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponMachinegunSlideFast.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MouseSmoothingWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\PivotWristWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\SimpleAIShooter.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\AstronautWeapon.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Weapon\WeaponRevolverSlideFast.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Demo\MeleeSwingUpLeft.txt" />
+     <None Include="Assets\External\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerDefault.txt" />
+     <None Include="Assets\External\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>Assets\External\Photon Unity Networking\Editor\PhotonNetwork\Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Photon3Unity3D">
+ <HintPath>Assets\External\Photon Unity Networking\Plugins\PhotonNetwork\library\Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMaker">
+ <HintPath>Assets\External\PlayMaker\PlayMaker.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor">
+ <HintPath>Assets\External\PlayMaker\Editor\PlayMakerEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditorResources">
+ <HintPath>Assets\External\PlayMaker\Editor\PlayMakerEditorResources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.de.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\de\PlayMakerEditor.de.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.es-ES.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\es-ES\PlayMakerEditor.es-ES.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.fr.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\fr\PlayMakerEditor.fr.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.it.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\it\PlayMakerEditor.it.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.ja.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\ja\PlayMakerEditor.ja.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.nl.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\nl\PlayMakerEditor.nl.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.pt-BR.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\pt-BR\PlayMakerEditor.pt-BR.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.sv-SE.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\sv-SE\PlayMakerEditor.sv-SE.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.zh-CN.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\zh-CN\PlayMakerEditor.zh-CN.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="PlayMakerEditor.zh-TW.resources">
+ <HintPath>Assets\External\PlayMaker\Editor\zh-TW\PlayMakerEditor.zh-TW.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WP8.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\WP8Support\EditorExtensions\UnityEditor.WP8.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Metro.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\MetroSupport\EditorExtensions\UnityEditor.Metro.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.BB10.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{B2B5468E-9592-6F43-4EE5-B9EAACBEE26C}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{E62C39CB-4F8B-B2BB-B964-D4C7348FF8C9}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
