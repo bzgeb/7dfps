@@ -28,11 +28,11 @@ public class CameraListener : MonoBehaviour
     }
 
     void Update() {
-        if ( Input.GetKeyDown( KeyCode.Alpha1 ) ) {
+        if ( Input.GetKeyDown( KeyCode.I ) ) {
             OnPlayerJoined();
         }
 
-        if ( Input.GetKeyDown( KeyCode.Alpha2 ) ) {
+        if ( Input.GetKeyDown( KeyCode.O ) ) {
             OnPlayerQuit();
         }
     }
