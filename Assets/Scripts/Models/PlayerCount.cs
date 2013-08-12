@@ -14,6 +14,8 @@ public class PlayerCount : MonoBehaviour, IPlayerCount {
 
     void OnEnable() {
         EventManager.Register( "RequestPlayerCount", RequestPlayerCount );
+
+        Count = GameObject.FindGameObjectsWithTag("Player").Length;
     }
 
     void OnDisable() {
