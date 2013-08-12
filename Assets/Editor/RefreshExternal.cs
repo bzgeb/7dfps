@@ -7,8 +7,12 @@ using System.Threading;
 public class RefreshExternal : ScriptableWizard
 {
     static bool disabled;
-    public string pathToExternalFolder = @"C:/Users/Bronson/Dropbox/THE TATIS CHRONICLES/7DFPS";
+    // public string pathToExternalFolder = @"C:/Users/Bronson/Dropbox/THE TATIS CHRONICLES/7DFPS/External";
+    public string pathToExternalFolder = EditorPrefs.GetString( externalFolderKey );
     public string pathToLocalExternalFolder = string.Format( "{0}/External", Application.dataPath, "External" );
+
+    static string externalFolderKey = "7DFPSExternalFolder";
+    static string localExternalFolderKey = "7DFPSLocalExternalFolder";
 
     [MenuItem( "GameObject/Refresh External References" )]
     static void CreateWizard() {
@@ -24,15 +28,24 @@ public class RefreshExternal : ScriptableWizard
             Debug.LogError( "I'm Busy!" );
             return;
         }
-        string folderName = "External";
-        string dstFolder = System.IO.Path.Combine( pathToExternalFolder, folderName );
-        if ( !System.IO.Directory.Exists( dstFolder ) ) {
-            System.IO.Directory.CreateDirectory( dstFolder );
+
+        if ( EditorPrefs.HasKey( externalFolderKey ) ) {
+            pathToExternalFolder = EditorPrefs.GetString( externalFolderKey );
+        } else {
+            pathToExternalFolder = "";            
+        }
+
+        if ( pathToExternalFolder == "" || pathToLocalExternalFolder == "" ) {
+            return;
+        }
+
+        if ( !System.IO.Directory.Exists( pathToExternalFolder ) ) {
+            System.IO.Directory.CreateDirectory( pathToExternalFolder );
         }
 
         Thread thread = new Thread( x => {
             disabled = true;
-            CopyDir( pathToLocalExternalFolder, dstFolder );
+            CopyDir( pathToLocalExternalFolder, pathToExternalFolder );
             Debug.Log( "External Push Complete" );
             disabled = false;
         } );
@@ -44,7 +57,13 @@ public class RefreshExternal : ScriptableWizard
         foreach ( string file in files ) {
             string fileName = System.IO.Path.GetFileName( file );
             string destFile = System.IO.Path.Combine( dst, fileName );
-            System.IO.File.Copy( file, destFile, true );
+            if ( File.Exists( destFile ) ) {
+                if ( File.GetLastWriteTime( destFile ) < File.GetLastWriteTime( file ) ) {
+                    System.IO.File.Copy( file, destFile, true );
+                }
+            } else {
+                System.IO.File.Copy( file, destFile, true );
+            }
         }
 
         string[] directories = System.IO.Directory.GetDirectories( src );
@@ -59,6 +78,7 @@ public class RefreshExternal : ScriptableWizard
     }
 
     void OnWizardUpdate() {
+        EditorPrefs.SetString( externalFolderKey, pathToExternalFolder );
     }
 
     // When the user pressed the "Apply" button OnWizardOtherButton is called.
