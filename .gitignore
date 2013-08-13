@@ -218,3 +218,4 @@ Library/*
 Temp/*
 *.csproj
 *.unityproj
+*.apk
