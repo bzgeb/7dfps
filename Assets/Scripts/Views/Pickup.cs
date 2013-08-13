@@ -4,6 +4,7 @@ using System.Collections;
 public class Pickup : MonoBehaviour {
     public GameObject objectToPickup;
     public bool isHeld;
+    // public Player playerModel;
 
     void Awake() {
         gameObject.tag = "Clickable";
@@ -12,14 +13,15 @@ public class Pickup : MonoBehaviour {
 
     void OnClick( GameObject clicker ) {
         Take( clicker );
+        clicker.SendMessage( "Pickup", this );
     }
 
     void Update() {
-        if ( isHeld ) {
-            if ( Input.GetMouseButton(1) ) {
-                Drop();
-            }
-        }
+        // if ( isHeld ) {
+        //     if ( playerModel.GetPickupButton() ) {
+        //         Drop();
+        //     }
+        // }
     }
 
     void Take( GameObject taker ) {

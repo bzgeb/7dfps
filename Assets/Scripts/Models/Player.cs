@@ -49,6 +49,16 @@ public class Player : MonoBehaviour {
         }
     }
 
+    string pickupButton;
+    public string PickupButton {
+        get {
+            return pickupButton;
+        }
+        private set {
+            pickupButton = value;
+        }
+    }
+
     public OuyaPlayer ouyaPlayer { get; set; }
 
     bool usingController = true;
@@ -67,6 +77,7 @@ public class Player : MonoBehaviour {
         VerticalAxis = string.Format("{0} Vertical", prefix);
         FireButton = string.Format("{0} Fire1", prefix);
         JumpButton = string.Format("{0} Jump", prefix);
+        PickupButton = string.Format("{0} Pickup", prefix);
     }
 
     void Update() {
@@ -136,6 +147,17 @@ public class Player : MonoBehaviour {
             result = OuyaInput.GetJoystick( OuyaJoystick.RightStick, ouyaPlayer ).y;
         } else {
             result = Input.GetAxisRaw( "Mouse Y" );         
+        }
+
+        return result;
+    }
+
+    public bool GetPickupButton() {
+        bool result = false;
+        if ( usingController ) {
+            result = OuyaInput.GetButton( OuyaButton.U, ouyaPlayer );
+        } else {
+            result = Input.GetButton( PickupButton );         
         }
 
         return result;
