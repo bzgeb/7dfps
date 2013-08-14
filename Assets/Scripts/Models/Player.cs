@@ -59,6 +59,16 @@ public class Player : MonoBehaviour {
         }
     }
 
+    string nextWeaponButton;
+    public string NextWeaponButton {
+        get {
+            return nextWeaponButton;
+        }
+        private set {
+            nextWeaponButton = value;
+        }
+    }
+
     public OuyaPlayer ouyaPlayer { get; set; }
 
     bool usingController = true;
@@ -78,6 +88,7 @@ public class Player : MonoBehaviour {
         FireButton = string.Format("{0} Fire1", prefix);
         JumpButton = string.Format("{0} Jump", prefix);
         PickupButton = string.Format("{0} Pickup", prefix);
+        NextWeaponButton = string.Format("{0} NextWeapon", prefix);
     }
 
     void Update() {
@@ -158,6 +169,17 @@ public class Player : MonoBehaviour {
             result = OuyaInput.GetButton( OuyaButton.U, ouyaPlayer );
         } else {
             result = Input.GetButton( PickupButton );         
+        }
+
+        return result;
+    }
+
+    public bool GetNextWeaponButton() {
+        bool result = false;
+        if ( usingController ) {
+            result = OuyaInput.GetButton( OuyaButton.Y, ouyaPlayer );
+        } else {
+            result = Input.GetButton( NextWeaponButton );
         }
 
         return result;
