@@ -69,6 +69,16 @@ public class Player : MonoBehaviour {
         }
     }
 
+    string runButton;
+    public string RunButton {
+        get {
+            return runButton;
+        } 
+        private set {
+            runButton = value;
+        }
+    }
+
     public OuyaPlayer ouyaPlayer { get; set; }
 
     bool usingController = true;
@@ -89,6 +99,7 @@ public class Player : MonoBehaviour {
         JumpButton = string.Format("{0} Jump", prefix);
         PickupButton = string.Format("{0} Pickup", prefix);
         NextWeaponButton = string.Format("{0} NextWeapon", prefix);
+        RunButton = string.Format("{0} Run", prefix);
     }
 
     void Update() {
@@ -180,6 +191,17 @@ public class Player : MonoBehaviour {
             result = OuyaInput.GetButton( OuyaButton.Y, ouyaPlayer );
         } else {
             result = Input.GetButton( NextWeaponButton );
+        }
+
+        return result;
+    }
+
+    public bool GetRunButton() {
+        bool result = false;
+        if ( usingController ) {
+            result = OuyaInput.GetButton( OuyaButton.A, ouyaPlayer );
+        } else {
+            result = Input.GetButton( RunButton );
         }
 
         return result;
