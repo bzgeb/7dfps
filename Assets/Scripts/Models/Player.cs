@@ -80,9 +80,39 @@ public class Player : MonoBehaviour {
         }
     }
 
+    string crouchButton;
+    public string CrouchButton {
+        get {
+            return crouchButton;
+        } 
+        private set {
+            crouchButton = value;
+        }
+    }
+
+    string reloadButton;
+    public string ReloadButton {
+        get {
+            return reloadButton;
+        } 
+        private set {
+            reloadButton = value;
+        }
+    }
+
     public OuyaPlayer ouyaPlayer { get; set; }
 
     bool usingController = true;
+
+    // do we want to scan for trigger and d-pad button events ?
+    public bool continuousScan = true;
+    
+    // the type of deadzone we want to use for convenience access
+    public DeadzoneType deadzoneType = DeadzoneType.CircularMap;
+
+    // the size of the deadzone
+    public float deadzone = 0.25f;
+    public float triggerThreshold = 0.1f;
 
     void Start() {
         string prefix = "";
@@ -101,11 +131,26 @@ public class Player : MonoBehaviour {
         PickupButton = string.Format("{0} Pickup", prefix);
         NextWeaponButton = string.Format("{0} NextWeapon", prefix);
         RunButton = string.Format("{0} Run", prefix);
+        CrouchButton = string.Format("{0} Crouch", prefix);
+        ReloadButton = string.Format("{0} Reload", prefix);
 
         animator.SetFloat("Speed", 0);
+
+        // set button state scanning to receive input state events for trigger and d-pads
+        OuyaInput.SetContinuousScanning(continuousScan);
+        
+        // define the deadzone if you want to use advanced joystick and trigger access
+        OuyaInput.SetDeadzone(deadzoneType, deadzone);
+        OuyaInput.SetTriggerThreshold(triggerThreshold);
+
+        // do one controller update here to get everything started as soon as possible
+        OuyaInput.UpdateControllers();
     }
 
     void Update() {
+        foreach ( string s in Input.GetJoystickNames() ) {
+            Debug.Log("Joystick: " + s);
+        }
         if ( usingController ) {
             OuyaInput.UpdateControllers();
             usingController = !CheckIfUsingKeyboard();
@@ -114,7 +159,6 @@ public class Player : MonoBehaviour {
         }
 
         animator.SetFloat("Speed", GetVerticalAxis());
-        Debug.Log("Speed: " + animator.GetFloat("Speed"));
     }
 
     bool CheckIfUsingController() {
@@ -182,6 +226,10 @@ public class Player : MonoBehaviour {
 
     public bool GetPickupButton() {
         bool result = false;
+        if ( index == PlayerIndex.Two ) {
+            return result;
+        }
+
         if ( usingController ) {
             result = OuyaInput.GetButton( OuyaButton.U, ouyaPlayer );
         } else {
@@ -208,6 +256,44 @@ public class Player : MonoBehaviour {
             result = OuyaInput.GetButton( OuyaButton.A, ouyaPlayer );
         } else {
             result = Input.GetButton( RunButton );
+        }
+
+        return result;
+    }
+
+    public bool GetFireButton() {
+        bool result = false;
+        if ( usingController ) {
+            // result = (OuyaInput.GetAxis( OuyaAxis.RT, ouyaPlayer ) != 0) ? true : false;
+            result = OuyaInput.GetButton( OuyaButton.O, ouyaPlayer );
+        } else {
+            result = Input.GetButton( FireButton );
+        }
+
+        return result;
+    }
+
+    public bool GetCrouchButton() {
+        bool result = false; 
+        // if ( usingController ) {
+        //     result = OuyaInput.GetButton( OuyaButton.O, ouyaPlayer );
+        // } else {
+        //     result = Input.GetButton( CrouchButton );
+        // }
+
+        return result;
+    }
+
+    public bool GetReloadButton() {
+        bool result = false; 
+        if ( index == PlayerIndex.One ) {
+            return result;
+        }
+
+        if ( usingController ) {
+            result = OuyaInput.GetButtonDown( OuyaButton.U, ouyaPlayer );
+        } else {
+            result = Input.GetButton( ReloadButton );
         }
 
         return result;
