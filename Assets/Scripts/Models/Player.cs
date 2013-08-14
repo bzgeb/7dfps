@@ -8,6 +8,7 @@ public enum PlayerIndex {
 
 public class Player : MonoBehaviour {
     public PlayerIndex index;
+    public Animator animator;
 
     string horizontalAxis;
     public string HorizontalAxis {
@@ -100,6 +101,8 @@ public class Player : MonoBehaviour {
         PickupButton = string.Format("{0} Pickup", prefix);
         NextWeaponButton = string.Format("{0} NextWeapon", prefix);
         RunButton = string.Format("{0} Run", prefix);
+
+        animator.SetFloat("Speed", 0);
     }
 
     void Update() {
@@ -109,6 +112,9 @@ public class Player : MonoBehaviour {
         } else {
             usingController = CheckIfUsingController();
         }
+
+        animator.SetFloat("Speed", GetVerticalAxis());
+        Debug.Log("Speed: " + animator.GetFloat("Speed"));
     }
 
     bool CheckIfUsingController() {
