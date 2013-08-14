@@ -2,14 +2,13 @@
 using UnityEditor;
 using System.Collections;
 
-[InitializeOnLoad]
 public class PlatformMonitor {
     static BuildTarget cachedPlatform;
 
     static PlatformMonitor() {
-        cachedPlatform = EditorUserBuildSettings.activeBuildTarget;
+        //cachedPlatform = EditorUserBuildSettings.activeBuildTarget;
         // EditorApplication.update += Update;
-        EditorUserBuildSettings.activeBuildTargetChanged += OnChangedPlatform;
+        //EditorUserBuildSettings.activeBuildTargetChanged += OnChangedPlatform;
     } 
 
     static void Update() {

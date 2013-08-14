@@ -9,10 +9,10 @@ public class RefreshExternal : ScriptableWizard
     static bool disabled;
     // public string pathToExternalFolder = @"C:/Users/Bronson/Dropbox/THE TATIS CHRONICLES/7DFPS/External";
     public string pathToExternalFolder = EditorPrefs.GetString( externalFolderKey );
-    public string pathToLocalExternalFolder = string.Format( "{0}/External", Application.dataPath, "External" );
+    public string pathToLocalExternalFolder = string.Format( "{0}/External", Application.dataPath );
 
-    static string externalFolderKey = "7DFPSExternalFolder";
-    static string localExternalFolderKey = "7DFPSLocalExternalFolder";
+    static public string externalFolderKey = "7DFPSExternalFolder";
+    static public string localExternalFolderKey = "7DFPSLocalExternalFolder";
 
     [MenuItem( "GameObject/Refresh External References" )]
     static void CreateWizard() {
