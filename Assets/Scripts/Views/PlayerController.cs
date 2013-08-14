@@ -9,7 +9,14 @@ public class PlayerController : MonoBehaviour {
     public Player playerModel;
 
     bool holdingObj;
+    public bool HoldingObj {
+        get { return holdingObj; } 
+    }
+
     Pickup objHeld;
+    public Pickup ObjHeld {
+        get { return objHeld; } 
+    }
 
     Transform camTransform;
 
@@ -24,18 +31,16 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if ( playerModel.GetPickupButton() ) {
-            if ( holdingObj ) {
-                objHeld.SendMessage("Drop"); 
-                holdingObj = false;
-                objHeld = null;
-            } else {
-                Ray inputRay = new Ray( camTransform.position, camTransform.forward );
-                RaycastHit hit;
+            Ray inputRay = new Ray( camTransform.position, camTransform.forward );
+            RaycastHit hit;
 
-                if ( Physics.Raycast ( inputRay, out hit, raycastDistance, clickLayerMask ) ) {
-                    if ( hit.collider.CompareTag( clickableTag ) ) {
-                        hit.collider.SendMessage( "OnClick", gameObject );
-                    }
+            if ( Physics.Raycast ( inputRay, out hit, raycastDistance, clickLayerMask ) ) {
+                if ( hit.collider.CompareTag( clickableTag ) ) {
+                    hit.collider.SendMessage( "OnClick", gameObject );
+                }
+            } else {
+                if ( holdingObj ) {
+                    Drop();
                 }
             }
         }	
@@ -44,5 +49,11 @@ public class PlayerController : MonoBehaviour {
     void Pickup( Pickup obj ) {
         objHeld = obj;
         holdingObj = true;
+    }
+
+    void Drop() {
+        objHeld.SendMessage("Drop"); 
+        holdingObj = false;
+        objHeld = null;
     }
 }
