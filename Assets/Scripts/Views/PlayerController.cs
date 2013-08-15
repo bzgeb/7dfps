@@ -28,6 +28,14 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         camTransform = cam.transform;
     }
+
+    void OnEnable() {
+        EventManager.Register( "OnKilled", OnKilled );
+    }
+
+    void OnDisable() {
+        EventManager.Deregister( "OnKilled", OnKilled );
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,5 +64,11 @@ public class PlayerController : MonoBehaviour {
         objHeld.SendMessage("Drop"); 
         holdingObj = false;
         objHeld = null;
+    }
+
+    void OnKilled( params object[] args ) {
+        if ( holdingObj ) {
+            Drop();
+        }
     }
 }

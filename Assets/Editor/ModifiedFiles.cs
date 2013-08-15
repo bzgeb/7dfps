@@ -12,18 +12,27 @@ public class ModifiedFiles : ScriptableObject
     [SerializeField]
     public List<string> deletedFiles;
 
-    void OnEnable() {
-        // hideFlags = HideFlags.HideAndDontSave;
-    }
-
     public void AddFile( string src, string dst ) {
+        bool duplicate = false;
+
         if ( addedFiles == null ) {
             addedFiles = new List<FileMod>();
         }
-        FileMod fileModification = new FileMod();
-        fileModification.sourcePath = src;
-        fileModification.destinationPath = dst;
-        addedFiles.Add( fileModification );
+
+        foreach ( FileMod fileMod in addedFiles ) {
+            if ( fileMod.sourcePath == src ) {
+                Debug.Log("Already there"); 
+                duplicate = true;
+            }
+        }
+
+        if ( !duplicate ) {
+            FileMod fileModification = new FileMod();
+            fileModification.sourcePath = src;
+            fileModification.destinationPath = dst;
+            
+            addedFiles.Add( fileModification );
+        }
     }
 
     public void DeleteFile( string dst ) {
