@@ -29,6 +29,7 @@ public class Pickup : MonoBehaviour {
     void Take( GameObject taker ) {
         objectToPickup.transform.parent = taker.transform;
         isHeld = true;
+        objectToPickup.transform.localPosition = Vector3.zero;
         if ( collider != null ) {
             collider.enabled = false; 
         }

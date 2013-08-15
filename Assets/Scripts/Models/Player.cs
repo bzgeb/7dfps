@@ -114,6 +114,8 @@ public class Player : MonoBehaviour {
     public float deadzone = 0.25f;
     public float triggerThreshold = 0.1f;
 
+    public bool GameOver { get; set; }
+
     void Start() {
         string prefix = "";
         if ( index == PlayerIndex.One ) {
@@ -149,6 +151,29 @@ public class Player : MonoBehaviour {
         OuyaInput.UpdateControllers();
     }
 
+    void OnEnable() {
+        EventManager.Register( "OnHunterWins", OnHunterWins );
+        EventManager.Register( "OnGathererWins", OnGathererWins );
+    }
+
+    void OnDisable() {
+        EventManager.Deregister( "OnHunterWins", OnHunterWins );
+        EventManager.Deregister( "OnGathererWins", OnGathererWins );
+    }
+
+    void OnHunterWins( params object[] args ) {
+        OnGameOver();
+    }
+
+    void OnGathererWins( params object[] args ) {
+        OnGameOver();
+    }
+
+    void OnGameOver() {
+        Debug.Log("Game Over");
+        GameOver = true;
+    }
+
     void Update() {
         if ( usingController ) {
             OuyaInput.UpdateControllers();
@@ -157,7 +182,9 @@ public class Player : MonoBehaviour {
             usingController = CheckIfUsingController();
         }
 
-        animator.SetFloat( "Speed", Mathf.Abs( GetVerticalAxis() ) );
+        if ( !GameOver ) {
+            animator.SetFloat( "Speed", Mathf.Abs( GetVerticalAxis() ) );
+        }
     }
 
     bool CheckIfUsingController() {
