@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+
 
 public class AssetWatcher : AssetPostprocessor
 {
@@ -37,12 +39,18 @@ public class AssetWatcher : AssetPostprocessor
         string externalFile = Path.Combine( externalPath, relativePath );
         Debug.Log( string.Format( "Imported: {0} now Creating: {1}", relativePath, externalFile ) );
 
+        ModifiedFiles modifiedFiles = ModifiedFiles.GetModifiedFiles();
+
         if ( File.Exists( externalFile ) ) {
             if ( File.GetLastWriteTime( externalFile ) < File.GetLastWriteTime( path ) ) {
-                File.Copy( path, externalFile );
+                modifiedFiles.AddFile( path, externalFile );
+                AssetDatabase.SaveAssets();
+                //File.Copy( path, externalFile );
             }
         } else {
-            File.Copy( path, externalFile );
+            modifiedFiles.AddFile( path, externalFile );
+            AssetDatabase.SaveAssets();
+            //File.Copy( path, externalFile );
         }
     }
 
@@ -50,8 +58,11 @@ public class AssetWatcher : AssetPostprocessor
         string externalFile = Path.Combine( externalPath, relativePath );
         Debug.Log( string.Format( "Deleted: {0} now Deleting: {1}", relativePath, externalFile ) );
 
+        ModifiedFiles modifiedFiles = ModifiedFiles.GetModifiedFiles();
+
         if ( File.Exists( externalFile ) ) {
-            File.Delete( externalFile );
+            modifiedFiles.DeleteFile( externalFile );
+            AssetDatabase.SaveAssets();
         }
     }
 
