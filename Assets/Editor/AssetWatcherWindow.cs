@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.IO;
 
 public class AssetWatcherWindow : EditorWindow {
 
@@ -20,15 +21,26 @@ public class AssetWatcherWindow : EditorWindow {
         } else {
             GUILayout.BeginVertical();
 
-            foreach ( FileMod modification in modifiedFiles.addedFiles ) {
+            for ( int i = 0; i < modifiedFiles.addedFiles.Count; ++i ) {
+                FileMod modification = modifiedFiles.addedFiles[i];
                 GUILayout.BeginHorizontal();
                 GUILayout.Label( modification.sourcePath );
                 if ( GUILayout.Button( "Discard" ) ) {
                     Debug.Log( "This is supposed to discard" );
+                    modifiedFiles.addedFiles.RemoveAt( i );
+                    AssetDatabase.SaveAssets();
                 }
                 GUILayout.EndHorizontal();
             }
-            GUILayout.Button( "Push Changes" );
+
+
+            if ( GUILayout.Button( "Push Changes" ) ) {
+                foreach ( FileMod modification in modifiedFiles.addedFiles ) {
+                    File.Copy( modification.sourcePath, modification.destinationPath, true );
+                }
+                modifiedFiles.addedFiles.Clear();
+                AssetDatabase.SaveAssets();
+            }
             GUILayout.EndVertical();
         }
 
