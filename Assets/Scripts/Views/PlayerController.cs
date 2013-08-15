@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public LayerMask clickLayerMask;
     public string clickableTag;
     public Player playerModel;
+    public GameObject pickupParent;
 
     bool holdingObj;
     public bool HoldingObj {
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 
             if ( Physics.Raycast ( inputRay, out hit, raycastDistance, clickLayerMask ) ) {
                 if ( hit.collider.CompareTag( clickableTag ) ) {
-                    hit.collider.SendMessage( "OnClick", gameObject );
+                    hit.collider.SendMessage( "OnClick", new object[] { gameObject, pickupParent } );
                 }
             } else {
                 if ( holdingObj ) {

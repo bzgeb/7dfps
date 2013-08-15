@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Homebase : MonoBehaviour {
-    void OnClick( GameObject clicker ) {
-        Debug.Log("Click");
+    void OnClick( object[] args ) {
+        GameObject clicker = (GameObject)args[0];
         PlayerController playerController = clicker.GetComponent<PlayerController>();
 
         if ( playerController == null ) {
@@ -21,5 +21,7 @@ public class Homebase : MonoBehaviour {
         playerController.SendMessage( "Drop" );
 
         EventManager.Push( "OnStashedObject" );
+
+        Destroy( obj.gameObject );
     }
 }

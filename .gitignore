@@ -219,3 +219,5 @@ Temp/*
 *.csproj
 *.unityproj
 *.apk
+Assets/ModifiedFiles.asset
+Assets/ModifiedFiles.asset.meta

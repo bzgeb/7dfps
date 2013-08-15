@@ -13,7 +13,7 @@ public class ModifiedFiles : ScriptableObject
     public List<string> deletedFiles;
 
     void OnEnable() {
-        hideFlags = HideFlags.HideAndDontSave;
+        // hideFlags = HideFlags.HideAndDontSave;
     }
 
     public void AddFile( string src, string dst ) {

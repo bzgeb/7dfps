@@ -11,8 +11,10 @@ public class Pickup : MonoBehaviour {
         isHeld = false;
     }
 
-    void OnClick( GameObject clicker ) {
-        Take( clicker );
+    void OnClick( object[] args ) {
+        GameObject clicker = (GameObject)args[0];
+        GameObject pickupParent = (GameObject)args[1];
+        Take( pickupParent );
         clicker.SendMessage( "Pickup", this );
     }
 
@@ -27,10 +29,16 @@ public class Pickup : MonoBehaviour {
     void Take( GameObject taker ) {
         objectToPickup.transform.parent = taker.transform;
         isHeld = true;
+        if ( collider != null ) {
+            collider.enabled = false; 
+        }
     }
 
     void Drop() {
         objectToPickup.transform.parent = null;
         isHeld = false;
+        if ( collider != null ) {
+            collider.enabled = true; 
+        }
     }
 }

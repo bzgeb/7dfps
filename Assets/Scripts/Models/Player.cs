@@ -136,6 +136,8 @@ public class Player : MonoBehaviour {
 
         animator.SetFloat("Speed", 0);
 
+        OuyaInput.SetSinglePlayerSecure( false );
+
         // set button state scanning to receive input state events for trigger and d-pads
         OuyaInput.SetContinuousScanning(continuousScan);
         
@@ -148,9 +150,6 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        foreach ( string s in Input.GetJoystickNames() ) {
-            Debug.Log("Joystick: " + s);
-        }
         if ( usingController ) {
             OuyaInput.UpdateControllers();
             usingController = !CheckIfUsingKeyboard();
@@ -158,7 +157,7 @@ public class Player : MonoBehaviour {
             usingController = CheckIfUsingController();
         }
 
-        animator.SetFloat("Speed", GetVerticalAxis());
+        animator.SetFloat( "Speed", Mathf.Abs( GetVerticalAxis() ) );
     }
 
     bool CheckIfUsingController() {
@@ -231,9 +230,9 @@ public class Player : MonoBehaviour {
         }
 
         if ( usingController ) {
-            result = OuyaInput.GetButton( OuyaButton.U, ouyaPlayer );
+            result = OuyaInput.GetButtonDown( OuyaButton.U, ouyaPlayer );
         } else {
-            result = Input.GetButton( PickupButton );         
+            result = Input.GetButtonDown( PickupButton );         
         }
 
         return result;
