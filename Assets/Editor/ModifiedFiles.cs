@@ -12,6 +12,10 @@ public class ModifiedFiles : ScriptableObject
     [SerializeField]
     public List<string> deletedFiles;
 
+    void OnEnable() {
+        hideFlags = HideFlags.HideAndDontSave;
+    }
+
     public void AddFile( string src, string dst ) {
         if ( addedFiles == null ) {
             addedFiles = new List<FileMod>();
