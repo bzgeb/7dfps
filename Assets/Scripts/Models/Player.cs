@@ -212,6 +212,10 @@ public class Player : MonoBehaviour {
 
     public float GetHorizontalAxis() {
         float result = 0;
+        if ( GameOver ) {
+            return result;
+        }
+
         if ( usingController ) {
             result = OuyaInput.GetJoystick( OuyaJoystick.LeftStick, ouyaPlayer ).x;
         } else {
@@ -223,6 +227,10 @@ public class Player : MonoBehaviour {
 
     public float GetVerticalAxis() {
         float result = 0;
+        if ( GameOver )  {
+            return result;
+        }
+
         if ( usingController ) {
             result = OuyaInput.GetJoystick( OuyaJoystick.LeftStick, ouyaPlayer ).y;
         } else {
@@ -235,6 +243,10 @@ public class Player : MonoBehaviour {
 
     public float GetHorizontalAxis2() {
         float result = 0;
+        if ( GameOver ) {
+            return result;
+        }
+        
         if ( usingController ) {
             result = OuyaInput.GetJoystick( OuyaJoystick.RightStick, ouyaPlayer ).x;
         } else {
@@ -246,6 +258,10 @@ public class Player : MonoBehaviour {
 
     public float GetVerticalAxis2() {
         float result = 0;
+        if ( GameOver ) {
+            return result;
+        }
+
         if ( usingController ) {
             result = OuyaInput.GetJoystick( OuyaJoystick.RightStick, ouyaPlayer ).y;
         } else {
