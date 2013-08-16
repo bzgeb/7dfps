@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
     public Player playerModel;
     public GameObject pickupParent;
 
+    bool hoveringLastFrame;
+
     bool holdingObj;
     public bool HoldingObj {
         get { return holdingObj; } 
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     void Awake() {
         holdingObj = false;
+        hoveringLastFrame = false;
     }
 
     void Start() {
@@ -39,11 +42,21 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ( playerModel.GetPickupButton() ) {
-            Ray inputRay = new Ray( camTransform.position, camTransform.forward );
-            RaycastHit hit;
+        Ray inputRay = new Ray( camTransform.position, camTransform.forward );
+        RaycastHit hit;
+        bool hovering = false;
 
-            if ( Physics.Raycast ( inputRay, out hit, raycastDistance, clickLayerMask ) ) {
+        if ( Physics.Raycast(inputRay, out hit, raycastDistance, clickLayerMask ) ) {
+            hovering = true;
+            hoveringLastFrame = true;
+            EventManager.Push( "OnHoverOverObject" );
+        } else if ( hoveringLastFrame ) {
+            hoveringLastFrame = false;
+            EventManager.Push( "OnHoverOffObject" );
+        }
+
+        if ( playerModel.GetPickupButton() ) {
+            if ( hovering ) {
                 if ( hit.collider.CompareTag( clickableTag ) ) {
                     hit.collider.SendMessage( "OnClick", new object[] { gameObject, pickupParent } );
                 }
