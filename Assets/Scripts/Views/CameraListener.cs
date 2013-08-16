@@ -5,6 +5,7 @@ using System.Collections;
 public class CameraListener : MonoBehaviour
 {
     Camera cam;
+    bool isSplit;
     public Player player;
     void Start() {
         cam = GetComponent<Camera>();
@@ -37,10 +38,14 @@ public class CameraListener : MonoBehaviour
         } else if ( player.index == PlayerIndex.Two ) {
             cam.rect = new Rect( 0, 0f, 1, 0.5f );
         }       
+
+        isSplit = true;
     }
 
     void MergeScreen() {
         cam.rect = new Rect( 0, 0, 1, 1 );
+
+        isSplit = false;
     }
 
     public void OnPlayerJoined( params object[] args ) {
@@ -52,6 +57,11 @@ public class CameraListener : MonoBehaviour
     }
 
     void LateUpdate() {
-        EventManager.Push("RequestPlayerCount");
+        EventManager.Push( "RequestPlayerCount" );
+        if ( isSplit ) {
+            cam.fov = 30;
+        } else {
+            cam.fov = 60;
+        }
     }
 }
