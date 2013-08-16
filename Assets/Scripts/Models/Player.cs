@@ -149,6 +149,11 @@ public class Player : MonoBehaviour {
 
         // do one controller update here to get everything started as soon as possible
         OuyaInput.UpdateControllers();
+
+        vp_FPInput input = GetComponent<vp_FPInput>();
+        if ( input != null ) {
+            input.Player.SetWeapon.TryStart(1);
+        }
     }
 
     void OnEnable() {
