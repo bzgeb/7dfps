@@ -311,8 +311,8 @@ public class Player : MonoBehaviour {
     public bool GetFireButton() {
         bool result = false;
         if ( usingController ) {
-            // result = (OuyaInput.GetAxis( OuyaAxis.RT, ouyaPlayer ) != 0) ? true : false;
-            result = OuyaInput.GetButton( OuyaButton.O, ouyaPlayer );
+            result = (OuyaInput.GetAxis( OuyaAxis.RT, ouyaPlayer ) != 0) ? true : false;
+            // result = OuyaInput.GetButton( OuyaButton.O, ouyaPlayer );
         } else {
             result = Input.GetButton( FireButton );
         }
